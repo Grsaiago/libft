@@ -6,11 +6,9 @@
 #    By: gsaiago <gsaiago@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 18:35:35 by gsaiago           #+#    #+#              #
-#    Updated: 2022/06/18 15:46:49 by gsaiago          ###   ########.fr        #
+#    Updated: 2022/07/01 23:59:13 by gsaiago          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-
 
 CC = cc
 
@@ -52,7 +50,13 @@ SRCS =  ft_isalpha.c\
 		ft_strmapi.c\
 		ft_strtrim.c\
 		ft_split.c\
-		
+		ft_printf.c\
+		ft_putstr.c\
+		ft_printhex.c\
+		ft_printptr.c\
+		ft_putnbr.c\
+		ft_putchar.c\
+
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME) 

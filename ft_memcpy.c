@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 18:52:51 by gsaiago           #+#    #+#             */
-/*   Updated: 2022/06/18 14:51:08 by gsaiago          ###   ########.fr       */
+/*   Updated: 2022/07/01 23:55:22 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t len)
 
 	destc = (char *)dest;
 	srcc = (const char *)src;
-	if (destc <= 0 && srcc <= 0)
+	if (destc == 0 && srcc == 0)
 		return (NULL);
 	while (len--)
 		*destc++ = *srcc++;
