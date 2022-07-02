@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 18:23:47 by gsaiago           #+#    #+#             */
-/*   Updated: 2022/07/02 00:04:10 by gsaiago          ###   ########.fr       */
+/*   Updated: 2022/07/02 00:52:11 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,13 @@ void			ft_striteri(char *s, void (*f)(unsigned int, char*));
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char			*ft_strtrim(char const *s1, char const *set);
 char			**ft_split(char const *s, char c);
-// extra_functions
+// printf_functions
 int				ft_printf(const char *s, ...);
 int				ft_putstr(char *s);
 int				ft_printhex(const char *base, unsigned int b, unsigned int n);
 unsigned int	ft_printptr(const char *base, void *n);
 int				ft_putnbr(int nbr);
 int				ft_putchar(int c);
-
+// extra_functions
+size_t			ft_pow(size_t base, size_t exp);
 #endif
