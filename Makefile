@@ -6,7 +6,7 @@
 #    By: gsaiago <gsaiago@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 18:35:35 by gsaiago           #+#    #+#              #
-#    Updated: 2022/07/02 00:51:25 by gsaiago          ###   ########.fr        #
+#    Updated: 2022/09/17 22:43:05 by gsaiago          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,6 +58,19 @@ SRCS =  ft_isalpha.c\
 		ft_putchar.c\
 		ft_pow.c\
 
+
+BONUS_SRCS	=	ft_lstnew.c\
+				ft_lstadd_front.c\
+				ft_lstsize.c\
+				ft_lstlast.c\
+				ft_lstadd_back.c\
+				ft_lstdelone.c\
+				ft_lstclear.c\
+				ft_lstiter.c\
+				ft_lstmap.c\
+
+BONUS_OBJS = $(BONUS_SRCS:.c=.o)
+
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME) 
@@ -68,8 +81,11 @@ $(NAME): $(OBJS)
 $(OBJS): $(SRCS)
 	$(CC) -I . -c $(CFLAGS) $(SRCS)
 
+bonus:	$(BONUS_OBJS)
+	ar -rcs $(NAME) $(BONUS_OBJS)
+
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	rm -f $(NAME)
