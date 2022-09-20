@@ -6,7 +6,7 @@
 #    By: gsaiago <gsaiago@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 18:35:35 by gsaiago           #+#    #+#              #
-#    Updated: 2022/09/20 17:27:20 by gsaiago          ###   ########.fr        #
+#    Updated: 2022/09/20 17:38:36 by gsaiago          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,6 +68,7 @@ SRCS =  ft_isalpha.c\
 		ft_printptr.c\
 		ft_putnbr.c\
 		ft_putchar.c\
+		smartptr.c\
 
 OBJS = $(SRCS:.c=.o)
 
