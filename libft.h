@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 18:23:47 by gsaiago           #+#    #+#             */
-/*   Updated: 2022/09/20 17:40:34 by gsaiago          ###   ########.fr       */
+/*   Updated: 2022/09/20 18:13:01 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,13 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
-# define smart __attribute__((cleanup(free_call)))
 
 // smartptr_struct //
 typedef struct s_meta
 {
 	void	(*dtor)(void *pointer);
 	void	*ptr;
-} t_meta ;
+}	t_meta;
 
 typedef struct s_list
 {
@@ -50,7 +49,8 @@ size_t			ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t			ft_strlen(const char *c);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
-char			*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char			*ft_strnstr(const char *haystack,
+					const char *needle, size_t len);
 char			*ft_strrchr(const char *s, int c);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
@@ -75,7 +75,8 @@ void			ft_lstadd_back(t_list **lst, t_list *new);
 void			ft_lstdelone(t_list *lst, void (*del)(void*));
 void			ft_lstclear(t_list **lst, void (*del)(void*));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
-t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
+					void (*del)(void *));
 // Ft_printf Functions //
 int				ft_printf(const char *s, ...);
 int				ft_putstr(char *s);
@@ -90,10 +91,11 @@ char			*ft_returnptr(char *buffer);
 char			*ft_gnl(int valid, int fd, char *sptr);
 char			*get_next_line(int fd);
 // SMART POINTERS //
+// Ussage: <variable_name>__attribute__((cleanup(free_call)));
 void			sfree(void *ptr);
 void			*smalloc(size_t size, void (*dtor)(void *));
 void			free_call(void *ptr);
 // Dtr smart pointer functions //
-void	destroy_matrix(void	*mat);
+void			destroy_matrix(void	*mat);
 
 #endif
