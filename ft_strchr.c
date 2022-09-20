@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 19:01:34 by gsaiago           #+#    #+#             */
-/*   Updated: 2022/07/02 00:20:35 by gsaiago          ###   ########.fr       */
+/*   Updated: 2022/06/09 19:10:42 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,13 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (NULL);
 }
+
+/*
+int main (void)
+{
+	char	str[] = "Essa string aqui o a e i o u";
+	printf("String total> %s\n", str);
+	printf("func original> %s\n", strchr(str, 'a'));
+	printf("func ft> %s\n", ft_strchr(str, 'a'));
+}
+*/

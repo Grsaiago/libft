@@ -6,7 +6,7 @@
 #    By: gsaiago <gsaiago@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 18:35:35 by gsaiago           #+#    #+#              #
-#    Updated: 2022/09/17 22:43:05 by gsaiago          ###   ########.fr        #
+#    Updated: 2022/09/20 17:27:20 by gsaiago          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = cc
 
 NAME = libft.a
 
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror
 
 SRCS =  ft_isalpha.c\
 		ft_isdigit.c\
@@ -50,45 +50,43 @@ SRCS =  ft_isalpha.c\
 		ft_strmapi.c\
 		ft_strtrim.c\
 		ft_split.c\
+		ft_pow.c\
+		ft_lstnew.c\
+		ft_lstadd_front.c\
+		ft_lstsize.c\
+		ft_lstlast.c\
+		ft_lstadd_back.c\
+		ft_lstdelone.c\
+		ft_lstclear.c\
+		ft_lstiter.c\
+		ft_lstmap.c\
+		get_next_line.c\
+		ft_strjoin_gnl.c\
 		ft_printf.c\
 		ft_putstr.c\
 		ft_printhex.c\
 		ft_printptr.c\
 		ft_putnbr.c\
 		ft_putchar.c\
-		ft_pow.c\
-
-
-BONUS_SRCS	=	ft_lstnew.c\
-				ft_lstadd_front.c\
-				ft_lstsize.c\
-				ft_lstlast.c\
-				ft_lstadd_back.c\
-				ft_lstdelone.c\
-				ft_lstclear.c\
-				ft_lstiter.c\
-				ft_lstmap.c\
-
-BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 OBJS = $(SRCS:.c=.o)
+
+.c.o:
+	@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
 all: $(NAME) 
 
 $(NAME): $(OBJS) 
-	ar -rcs $(NAME) $(OBJS)
+	@ar -rcs $(NAME) $(OBJS)
 
 $(OBJS): $(SRCS)
-	$(CC) -I . -c $(CFLAGS) $(SRCS)
-
-bonus:	$(BONUS_OBJS)
-	ar -rcs $(NAME) $(BONUS_OBJS)
+	@$(CC) -c $(CFLAGS) $(SRCS)
 
 clean:
-	rm -f $(OBJS) $(BONUS_OBJS)
+	@rm -f $(OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 

@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 18:56:29 by gsaiago           #+#    #+#             */
-/*   Updated: 2022/06/18 21:47:55 by gsaiago          ###   ########.fr       */
+/*   Updated: 2022/06/09 16:23:12 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,14 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
 	size_t	n;
-	size_t	i;
-		
-	if (count == 0 || size == 0)
-		return (NULL);
-	i = -1;
+	int		i;
+
 	n = count * size;
+	i = n;
 	ptr = malloc(n);
 	if (ptr == NULL)
 		return (NULL);
-	while (++i < n)
+	while (i-- > 0)
 		((char *)ptr)[i] = 0;
 	return (ptr);
 }

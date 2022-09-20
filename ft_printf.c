@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:02:12 by gsaiago           #+#    #+#             */
-/*   Updated: 2022/07/02 00:05:09 by gsaiago          ###   ########.fr       */
+/*   Updated: 2022/09/20 17:28:42 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@ static int	ft_params(const char *s, int aux, va_list vlist);
 int	ft_printf(const char *s, ...)
 {
 	va_list		vlist;
+	long int	i;
 	long int	aux;
 
 	aux = ft_strlen(s);
+	i = 0;
 	va_start(vlist, s);
 	while (*s)
 	{

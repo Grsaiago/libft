@@ -6,20 +6,22 @@
 /*   By: gsaiago <gsaiago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 18:55:33 by gsaiago           #+#    #+#             */
-/*   Updated: 2022/07/02 00:55:03 by gsaiago          ###   ########.fr       */
+/*   Updated: 2022/06/15 16:53:59 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_pow10(int n);
+static int	ft_pow(int n);
 static int	ft_tatoi(const char *str, int sign);
 
 int	ft_atoi(const char *str)
 {
+	int	numb;
 	int	sign;
 
 	sign = 1;
+	numb = 0;
 	while ((*str >= 9 && *str <= 13) || *str == 32)
 		str++;
 	if (*str == '+' && str[1] >= '0' && str[1] <= '9')
@@ -49,11 +51,11 @@ static int	ft_tatoi(const char *str, int sign)
 		len++;
 	max = len;
 	while (++i < max)
-		numb = numb + (str[i] - 48) * ft_pow10(--len);
+		numb = numb + (str[i] - 48) * ft_pow(--len);
 	return (numb * sign);
 }
 
-static int	ft_pow10(int n)
+static int	ft_pow(int n)
 {
 	int	base;
 	int	i;

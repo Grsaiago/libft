@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:06:18 by gsaiago           #+#    #+#             */
-/*   Updated: 2022/07/01 23:55:43 by gsaiago          ###   ########.fr       */
+/*   Updated: 2022/09/20 17:28:56 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_printhex(const char *base, unsigned int b, unsigned int n)
 		return (1);
 	}
 	len = ft_lencount(n, b) - 1;
-	str = ft_calloc(len + 2, sizeof (char));
+	str = calloc(len + 2, sizeof (char));
 	if (!str)
 		return (0);
 	while (n > 0)
