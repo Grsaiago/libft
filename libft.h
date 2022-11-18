@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 18:23:47 by gsaiago           #+#    #+#             */
-/*   Updated: 2022/09/20 18:13:01 by gsaiago          ###   ########.fr       */
+/*   Updated: 2022/11/17 17:10:52 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void			ft_putnbr_fd(int n, int fd);
 void			ft_putchar_fd(char c, int fd);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 void			ft_putendl_fd(char *s, int fd);
-char			*ft_strjoin(char const *s1, char const *s2);
+char			*ft_strjoin(char *s1, char *s2, int flag);
 char			*ft_itoa(int n);
 void			ft_striteri(char *s, void (*f)(unsigned int, char*));
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));

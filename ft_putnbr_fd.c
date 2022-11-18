@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 14:07:31 by gsaiago           #+#    #+#             */
-/*   Updated: 2022/06/07 16:34:02 by gsaiago          ###   ########.fr       */
+/*   Updated: 2022/11/17 17:12:37 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_putnbr_fd(int nbr, int fd)
 	}
 	else
 		n = nbr;
-	if (n < 10 && n >= 0)
+	if (n < 10)
 	{
 		nb = n + 48;
 		write (fd, &nb, 1);
