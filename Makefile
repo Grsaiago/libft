@@ -63,6 +63,7 @@ SRCS =  ft_isalpha.c\
 		ft_lstclear.c\
 		ft_lstiter.c\
 		ft_lstmap.c\
+		ft_lst_remove_if.c\
 		get_next_line.c\
 		ft_strjoin_gnl.c\
 		ft_printf.c\
@@ -73,6 +74,11 @@ SRCS =  ft_isalpha.c\
 		ft_putchar.c\
 		smartptr.c\
 
+COLOR_GREEN	=	\033[0;32m
+COLOR_RED	=	\033[0;31m
+COLOR_BLUE	=	\033[0;34m
+COLOR_END	=	\033[0m
+
 OBJS = $(SRCS:.c=.o)
 
 .c.o:
@@ -82,6 +88,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS) 
 	@ar -rcs $(NAME) $(OBJS)
+	@echo "$(COLOR_GREEN)Libft Compiled :D$(COLOR_END)"
 
 $(OBJS): $(SRCS)
 	@$(CC) -c $(CFLAGS) $(SRCS)

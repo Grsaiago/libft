@@ -35,9 +35,9 @@ static char	*join_str(char *s1, char *s2)
 	char	*str;
 
 	if (!s1)
-		return (ft_strdup(s2));
+		return (ft_strdup(s2, 0));
 	if (!s2)
-		return (ft_strdup(s1));
+		return (ft_strdup(s1, 0));
 	i = ft_strlen(s1);
 	j = ft_strlen(s2);
 	count = 0;
