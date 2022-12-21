@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 18:23:47 by gsaiago           #+#    #+#             */
-/*   Updated: 2022/11/22 21:14:31 by gsaiago          ###   ########.fr       */
+/*   Updated: 2022/12/21 20:53:34 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-// smartptr_struct //
+/* smartptr_struct */
 typedef struct s_meta
 {
 	void	(*dtor)(void *pointer);
 	void	*ptr;
 }	t_meta;
-
+/* libft bonus struct */
 typedef struct s_list
 {
 	void			*content;
@@ -80,25 +80,25 @@ void			ft_lstclear(t_list **lst, void (*del)(void*));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 					void (*del)(void *));
-// Ft_printf Functions //
+/* Ft_printf Functions */
 int				ft_printf(const char *s, ...);
 int				ft_putstr(char *s);
 int				ft_printhex(const char *base, unsigned int b, unsigned int n);
 unsigned int	ft_printptr(const char *base, void *n);
 int				ft_putnbr(int nbr);
 int				ft_putchar(int c);
-// GNL Functions //
+/* GNL Functions */
 char			*ft_strjoin_gnl(char *s1, char *s2);
 char			*ft_staticptr(char *buffer);
 char			*ft_returnptr(char *buffer);
 char			*ft_gnl(int valid, int fd, char *sptr);
 char			*get_next_line(int fd);
-// SMART POINTERS //
-// Ussage: <variable_name>__attribute__((cleanup(free_call)));
+/* SMART POINTERS */
+/* Ussage: <variable_name>__attribute__((cleanup(free_call))); */
 void			sfree(void *ptr);
 void			*smalloc(size_t size, void (*dtor)(void *));
 void			free_call(void *ptr);
-// Dtr smart pointer functions //
+/* Dtr smart pointer functions */
 void			destroy_matrix(void	*mat);
 
 #endif
