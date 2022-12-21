@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 18:23:47 by gsaiago           #+#    #+#             */
-/*   Updated: 2022/12/21 20:53:34 by gsaiago          ###   ########.fr       */
+/*   Updated: 2022/12/21 20:57:14 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,8 @@ char			*ft_staticptr(char *buffer);
 char			*ft_returnptr(char *buffer);
 char			*ft_gnl(int valid, int fd, char *sptr);
 char			*get_next_line(int fd);
+/* expanded libft */
+void			ft_free_mat(char **mat);
 /* SMART POINTERS */
 /* Ussage: <variable_name>__attribute__((cleanup(free_call))); */
 void			sfree(void *ptr);
