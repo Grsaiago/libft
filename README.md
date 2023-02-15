@@ -46,24 +46,36 @@
 * [`ft_pow`](ft_pow.c) - power function.
 
 ### Nonstandard functions
-* [`ft_substr`](ft_substr.c) - 
-* [`ft_strjoin`](ft_strjoin.c) - 
-* [`ft_strtrim`](ft_strtrim.c) - 
-* [`ft_split`](ft_split.c) - 
-* [`ft_itoa`](ft_itoa.c) - 
-* [`ft_strmapi`](ft_strmapi.c) - 
-* [`ft_striteri`](ft_striteri.c) - 
-* [`ft_putchar_fd`](ft_putchar_fd.c) - 
-* [`ft_putstr_fd`](ft_putstr_fd.c) - 
-* [`ft_putendl_fd`](ft_putendl_fd.c) - 
-* [`ft_putnbr_fd`](ft_putnbr_fd.c) - 
-* [`ft_free_mat`](ft_free_mat.c) - 
-* [`ft_printhex`](ft_printhex.c) - 
-* [`ft_printptr`](ft_printptr.c) - 
-* [`ft_putchar`](ft_putchar.c) - 
-* [`ft_putendl`](ft_putendl.c) - 
-* [`ft_putnbr_fd`](ft_putnbr.c) - 
-* [`ft_split`](ft_split.c) - 
-* [`ft_strndup`](ft_strndup.c) - 
-* [`get_next_line`](get_next_line.c) - 
-* [`ft_printf`](ft_printf.c) - 
+* [`ft_itoa`](ft_itoa.c) - returns a malloc'd string from an int. 
+* [`ft_strndup`](ft_strndup.c) - returns a malloc'd copy of the first n bytes of a string.
+* [`ft_substr`](ft_substr.c) - creates a new string from a portion of a given string.
+* [`ft_strjoin`](ft_strjoin.c) - joins two strings (with malloc).
+* [`ft_strtrim`](ft_strtrim.c) - trailes off the matching char from the beginning and end of a string.
+* [`ft_split`](ft_split.c) - splits a string into malloc'd matrix.
+* [`ft_free_mat`](ft_free_mat.c) - frees a malloc'd matrix.
+* [`ft_strmapi`](ft_strmapi.c) - returns malloc'd string that is the result of successive iterations of a function over a given string.
+* [`ft_striteri`](ft_striteri.c) - iterates a given function over each position of a given string.
+* [`ft_putchar`](ft_putchar.c) - prints a char to stdout.
+* [`ft_putchar_fd`](ft_putchar_fd.c) - writes a char to the given file descriptor.
+* [`ft_putstr`](ft_putstr.c) - writes a string to stdout.
+* [`ft_putstr_fd`](ft_putstr_fd.c) - writes a string to the given file descriptor.
+* [`ft_putendl`](ft_putendl.c) - writes a string followed by a \n to stdout.
+* [`ft_putendl_fd`](ft_putendl_fd.c) - writes a string followed by a \n to the given file descriptor.
+* [`ft_putnbr_fd`](ft_putnbr.c) - writes a number to stdout.
+* [`ft_putnbr_fd`](ft_putnbr_fd.c) - writes a number into the given file descriptor.
+* [`ft_printhex`](ft_printhex.c) - prints to stdout a number as it's hexadecimal format.
+* [`ft_printptr`](ft_printptr.c) - prints to stdout an address in 0x0hex format.
+* [`get_next_line`](get_next_line.c) - my implementation of the GNU get_next_line.
+* [`ft_printf`](ft_printf.c) - my implementation of the printf function.
+
+### Linked list functions
+* [`ft_lstnew`](ft_lstnew.c) - creates a new node.
+* [`ft_lstadd_front`](ft_lstadd_front.c) - adds a new node to the front of the list.
+* [`ft_lstadd_back`](ft_lstadd_back.c) - adds a new node to the back of the list.
+* [`ft_lstsize`](ft_lstsize.c) - gets the size of the list.
+* [`ft_lstlast`](ft_lstlast.c) - gets the last node of the list.
+* [`ft_lstdelone`](ft_lstdelone.c) - deletes a node from the list.
+* [`ft_lstclear`](ft_lstclear.c) - deletes the whole list.
+* [`ft_lstiter`](ft_lstiter.c) - iterates a function over the content of each node.
+* [`ft_lstmap`](ft_lstmap.c) - returns a new list that is the result iterations over every node of the list.
+* [`ft_lst_remove_if`](ft_lst_remove_if.c) - removes a node if the compare function returns true over a sample data and the contents of said node.
