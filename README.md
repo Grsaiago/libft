@@ -67,6 +67,7 @@
 * [`ft_printptr`](ft_printptr.c) - prints to stdout an address in 0x0hex format.
 * [`get_next_line`](get_next_line.c) - my implementation of the GNU get_next_line.
 * [`ft_printf`](ft_printf.c) - my implementation of the printf function.
+* [`samrtpointer`](smartptr.c) - my implementation of Snaipe's smart pointers. (check his original work [here](https://github.com/Snaipe/libcsptr))
 
 ### Linked list functions
 * [`ft_lstnew`](ft_lstnew.c) - creates a new node.
