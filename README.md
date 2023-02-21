@@ -12,6 +12,22 @@
 
 </p>
 
+## Install
+```sh
+$> git clone https://github.com/Grsaiago/libft <path where to put the lib> && cd <path to lib>;
+$> make
+```
+
+**Don't forget to link the lib with the -lft -L$(path_to_lib) on your project's makefile**
+
+`make` supports the following flags. (the flags already compile with the bonus part)
+- `all` or simply `make` -> Compiles everything and gets the lib ready to go!
+- `make clean` -> Removes the object files.
+- `make fclean` -> Removes the object files, as well as the .a file
+- `make re` -> Removes the object and .a files and recompiles everything.
+
+
+## Functions List
 ### Functions from `<ctype.h>`
 * [`ft_isascii`](ft_isascii.c) - checks if it's an ASCII char.
 * [`ft_isalpha`](ft_isalpha.c) - checks if it's an alphabetic char.
