@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 18:22:51 by gsaiago           #+#    #+#             */
-/*   Updated: 2022/06/18 14:57:39 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/03/20 18:45:48 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,10 @@ static size_t	count_words(const char *str, char c)
 	while (*str)
 	{
 		words++;
-		while (*str != c)
-			str++;
+	while (*str && *str != c)
+		str++;
+	while (*str && *str == c)
+		str++;
 	}
 	return (words);
 }
