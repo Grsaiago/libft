@@ -6,7 +6,11 @@
 #    By: gsaiago <gsaiago@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 18:35:35 by gsaiago           #+#    #+#              #
+<<<<<<< HEAD
 #    Updated: 2023/04/07 14:52:15 by gsaiago          ###   ########.fr        #
+=======
+#    Updated: 2023/03/22 23:18:09 by gsaiago          ###   ########.fr        #
+>>>>>>> 1d03d74c959d0669b769a31246d5f6e860bea652
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,6 +78,7 @@ SRCS =  ft_isalpha.c\
 		ft_putchar.c\
 		ft_free_mat.c\
 		ft_lsttochrmat.c\
+		ft_mat_size.c\
 		smartptr.c\
 
 COLOR_GREEN	=	\033[0;32m
