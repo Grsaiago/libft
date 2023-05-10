@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 19:54:53 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/10 20:14:28 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/05/10 20:19:12 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_revstring(char *str)
 {
-	size_t	len;
-	int		i;
+	int	len;
+	int	i;
 
 	if (!str)
 		return (NULL);
