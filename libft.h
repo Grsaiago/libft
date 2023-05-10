@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 18:23:47 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/04/07 15:36:44 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/05/10 20:15:59 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_meta
 /* libft bonus struct */
 typedef struct s_list
 {
-	void			*content;
+	char			*content;
 	struct s_list	*next;
 }	t_list;
 
@@ -97,6 +97,7 @@ char			*get_next_line(int fd);
 void			ft_free_mat(char **mat);
 char			**ft_lsttochrmat(t_list *node);
 int				ft_mat_size(char **mat);
+char			*ft_revstring(char *str);
 /* SMART POINTERS */
 /* Ussage: <variable_name>__attribute__((cleanup(free_call))); */
 void			sfree(void *ptr);
