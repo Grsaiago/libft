@@ -3,113 +3,106 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsaiago <gsaiago@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/11 16:39:03 by gsaiago           #+#    #+#             */
-/*   Updated: 2022/09/20 16:54:29 by gsaiago          ###   ########.fr       */
+/*   Created: 2023/05/21 21:35:39 by gsaiago           #+#    #+#             */
+/*   Updated: 2023/05/22 12:13:52 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "./libft.h"
 
 #ifndef BUFFER_SIZE
-# define BUFFER_SIZE 10
+# define BUFFER_SIZE 42 
 #endif
+
+static char	*get_temp_buff(char *staticbuff, int fd);
+static char	*get_return_buff(char *staticbuff);
+static char	*get_static_buff(char *staticbuff);
 
 char	*get_next_line(int fd)
 {
-	int			valid;
-	static char	*sptr;
-	char		*rptr;
+	static char	*staticbuff;
+	char		*returnbuff;
 
 	if (fd < 0 || BUFFER_SIZE < 1)
 	{
-		if (sptr)
-			free(sptr);
+		if (staticbuff)
+			free(staticbuff);
 		return (NULL);
 	}
-	if (!sptr)
-		sptr = ft_strdup("", 0);
-	valid = 1;
-	sptr = ft_gnl(valid, fd, sptr);
-	if (!sptr)
+	staticbuff = get_temp_buff(staticbuff, fd);
+	if (!staticbuff)
 		return (NULL);
-	rptr = ft_returnptr(sptr);
-	sptr = ft_staticptr(sptr);
-	return (rptr);
+	returnbuff = get_return_buff(staticbuff);
+	staticbuff = get_static_buff(staticbuff);
+	return (returnbuff);
 }
 
-char	*ft_gnl(int valid, int fd, char *sptr)
+static char	*get_static_buff(char *staticbuff)
 {
-	char	*auxptr;
+	char	*newstatbuff;
+	size_t	newlen;
+	size_t	statlen;
 
-	while (valid && !ft_strchr(sptr, '\n'))
+	if (staticbuff && ft_strchr(staticbuff, '\n'))
 	{
-		auxptr = ft_calloc(sizeof(char), BUFFER_SIZE + 1);
-		valid = read(fd, auxptr, BUFFER_SIZE);
-		if (valid < 0)
-		{
-			free(auxptr);
-			free(sptr);
-			return (NULL);
-		}
-		if (valid > 0)
-			sptr = ft_strjoin_gnl(sptr, auxptr);
-		else
-			free(auxptr);
-	}
-	return (sptr);
-}
-
-char	*ft_returnptr(char *buffer)
-{
-	int		i;
-	int		extra;
-	char	*str;
-
-	if (!buffer[0])
-		return (NULL);
-	extra = 1;
-	i = 0;
-	while (buffer[i] != '\n' && buffer[i])
-		i++;
-	if (buffer[i] == '\n')
-		extra = 2;
-	str = ft_calloc(sizeof(char), i + extra);
-	i = 0;
-	while (buffer[i] && (buffer[i] != '\n'))
-	{
-		str[i] = buffer [i];
-		i++;
-	}
-	if (extra == 2)
-		str[i] = '\n';
-	return (str);
-}
-
-char	*ft_staticptr(char *buffer)
-{
-	int		i;
-	char	*str;
-	int		j;
-
-	j = 0;
-	i = 0;
-	if (ft_strchr(buffer, '\n'))
-	{
-		while (buffer[i] != '\n')
-			i++;
-		i++;
-		str = ft_calloc(sizeof(char), (ft_strlen(buffer) - i + 1));
-		while (buffer[i + j])
-		{
-			str[j] = buffer[i + j];
-			j++;
-		}
-		free(buffer);
-		return (str);
+		newlen = 0;
+		statlen = 0;
+		while (staticbuff[statlen] != '\n')
+			statlen++;
+		statlen++;
+		while (staticbuff[statlen + newlen])
+			newlen++;
+		newstatbuff = ft_calloc(sizeof(char), newlen + 1);
+		ft_memmove(newstatbuff, &staticbuff[statlen], newlen);
+		free(staticbuff);
+		return (newstatbuff);
 	}
 	else
-		free(buffer);
+		free(staticbuff);
 	return (NULL);
+}
+
+static char	*get_return_buff(char *staticbuff)
+{
+	char	*returnbuff;
+	int		returnlen;
+
+	returnlen = 0;
+	while (staticbuff[returnlen] && staticbuff[returnlen] != '\n')
+		returnlen++;
+	if (staticbuff[returnlen] == '\n')
+		returnlen++;
+	if (returnlen == 0)
+		return (NULL);
+	returnbuff = calloc(sizeof(char), returnlen + 1);
+	ft_memmove(returnbuff, staticbuff, returnlen);
+	return (returnbuff);
+}
+
+static char	*get_temp_buff(char *staticbuff, int fd)
+{
+	char		readbuff[BUFFER_SIZE + 1];
+	int			readflag;
+
+	if (staticbuff && ft_strchr(staticbuff, '\n'))
+		return (staticbuff);
+	while (42)
+	{
+		readflag = read(fd, readbuff, BUFFER_SIZE);
+		if (readflag < 0)
+		{
+			free(staticbuff);
+			return (NULL);
+		}
+		if (readflag > 0)
+		{
+			readbuff[readflag] = '\0';
+			staticbuff = ft_strjoin(staticbuff, readbuff, 1);
+		}
+		if (!staticbuff || ft_strchr(staticbuff, '\n') || readflag == 0)
+			break ;
+	}
+	return (staticbuff);
 }
