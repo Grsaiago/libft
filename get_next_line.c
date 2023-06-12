@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 21:35:39 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/22 12:13:52 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/05/22 12:19:08 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*get_next_line(int fd)
 	static char	*staticbuff;
 	char		*returnbuff;
 
-	if (fd < 0 || BUFFER_SIZE < 1)
+	if (fd < 0)
 	{
 		if (staticbuff)
 			free(staticbuff);
