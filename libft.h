@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 18:23:47 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/13 16:17:48 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/13 16:33:36 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@
 
 enum e_read
 {
-	FT_LST = 0,
+	FT_LST = 1,
 	FT_STR = 2,
-	FT_N = 4,
-	FT_NON = 8
+	FT_MAT = 4,
+	FT_N = 8,
+	FT_NON = 16
 };
 
 /* read_file enum */
