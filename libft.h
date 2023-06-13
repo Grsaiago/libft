@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 18:23:47 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/13 16:33:36 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/13 19:49:24 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,7 @@ char			**ft_lsttochrmat(t_list *node);
 int				ft_mat_size(char **mat);
 char			*ft_revstring(char *str);
 void			*ft_read_file(int fd, int flags);
+int				ft_isnumstr(char *str);
 /* SMART POINTERS */
 /* Ussage: <variable_name>__attribute__((cleanup(free_call))); */
 void			sfree(void *ptr);
