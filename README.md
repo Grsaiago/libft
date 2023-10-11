@@ -28,6 +28,9 @@ $> make
 
 
 ## Functions List
+### Functions from `<stdio.h>`
+* [`ft_printf`](ft_printf.c) - my implementation of the printf function.
+
 ### Functions from `<ctype.h>`
 * [`ft_isascii`](ft_isascii.c) - checks if it's an ASCII char.
 * [`ft_isalpha`](ft_isalpha.c) - checks if it's an alphabetic char.
@@ -82,7 +85,6 @@ $> make
 * [`ft_printhex`](ft_printhex.c) - prints to stdout a number as it's hexadecimal format.
 * [`ft_printptr`](ft_printptr.c) - prints to stdout an address in 0x0hex format.
 * [`get_next_line`](get_next_line.c) - my implementation of the GNU get_next_line.
-* [`ft_printf`](ft_printf.c) - my implementation of the printf function.
 * [`samrtpointer`](smartptr.c) - my implementation of Snaipe's smart pointers. (check his original work [here](https://github.com/Snaipe/libcsptr))
 
 ### Linked list functions
