@@ -31,11 +31,3 @@ char	*ft_strdup(char *s1, int flag)
 		free(s1);
 	return (ptr);
 }
-
-int	main (void)
-{
-	char	str[] = "Essa string aqui";
-
-	printf("A str original > %s\n", str);
-	printf("A func original > %s\n", ft_strdup((char *)str, 0));
-}
